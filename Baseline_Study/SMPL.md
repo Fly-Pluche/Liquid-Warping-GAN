@@ -72,7 +72,7 @@ N vertices(顶点)：6890
 - $B_s$：Shape blendshapes function
 - $J$：Joint regressor,Predicts joints from surface
 - $K:$骨架节点数
-- $M(\vec{β},\vec{θ})=W(T_p(\vec{β},\vec{θ}),\vec{θ},W_1)$![image-20210624225045815](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210624225045815.png)
+- $M(\vec{β},\vec{θ})=W(T_p(\vec{β},\vec{θ}),\vec{θ},W_1)$![image-20210624225045815](https://gitee.com/Black_Friday/blog/raw/master/image/image-20210624225045815.png)
 
 $R^{3N×3K×|θ|×|W_1|}\longrightarrow{R^{3R}}$(the standard linear blend skinning function):
 

@@ -8,7 +8,7 @@
 
 ### impersonator_trainer:
 
-![](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210620212915727.png)
+![](https://gitee.com/Black_Friday/blog/raw/master/image/image-20210620212915727.png)
 
 # HumanModelRecovery
 
@@ -119,19 +119,19 @@ return:
 
 #### HumanModelRecovery
 
-![image-20210620211735278](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210620211735278.png)
+![image-20210620211735278](https://gitee.com/Black_Friday/blog/raw/master/image/image-20210620211735278.png)
 
 加载数据
 
 #### _create_render
 
-![image-20210620211819264](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210620211819264.png)
+![image-20210620211819264](https://gitee.com/Black_Friday/blog/raw/master/image/image-20210620211819264.png)
 
 估计也是加载数据
 
 #### 生成器 判别器
 
-![image-20210620212544523](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210620212544523.png)
+![image-20210620212544523](https://gitee.com/Black_Friday/blog/raw/master/image/image-20210620212544523.png)
 
 ## run_imitator.py 中的代码
 

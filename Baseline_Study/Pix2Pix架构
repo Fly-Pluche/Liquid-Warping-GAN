@@ -1,6 +1,6 @@
 ## Pix2Pix架构
 
-![image-20210615181501766](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210615181501766.png)
+![image-20210615181501766](https://gitee.com/Black_Friday/blog/raw/master/image/image-20210615181501766.png)
 
 ### Auto-encoder
 
@@ -26,5 +26,5 @@ and so on
 
 想想$U_2-net$也是一样骚操作。。。
 
-![image-20210615182113052](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210615182113052.png)
+![image-20210615182113052](https://gitee.com/Black_Friday/blog/raw/master/image/image-20210615182113052.png)
 

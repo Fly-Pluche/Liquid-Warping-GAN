@@ -116,7 +116,7 @@ Liquid Warping GAN 包括三个阶段，body mesh recovery, flow composition and
 - $G_{SID}$：是一个去噪的自卷积目的是指导编码器提取能够保存源信息的特征。跟$\hat{I}_{bg}$类似，它将masked source foreground $f_{ft}$和网格图$C_s$（一共六个通道）作为输入，并且重新构造了source front image $\hat{I}_{bg}$
 - $G_{TSF}$：它将warp foreground 通过双线性采样和网格图$C_t$（六个通道）作为输入，为了获得纹理，风格，颜色等源图信息，我们构造了一个新的Liquid Warping Block（LWB），用于连接带有目标流（target）的source，它将协调来自$G_{SID}$的source features，并把它们融入transfer stream $G_{TSF}$
 
-<img src="C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210614212805217.png" alt="image-20210614212805217" style="zoom: 67%;" />
+<img src="https://gitee.com/Black_Friday/blog/raw/master/image/image-20210614212805217.png" alt="image-20210614212805217" style="zoom: 67%;" />
 
 它解决了多种来源，如在人体外观转移中，保留来源一的头部，从来源二穿上外层衣服，而从来源三穿下外层衣服。不同部分的特征在进入$G_{TSF}$时，通过自己的转化流独立的聚合。
 
@@ -132,13 +132,13 @@ $$
 
 
 
-<img src="C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210614210055825.png" alt="image-20210614210055825" style="zoom: 80%;" />
+<img src="https://gitee.com/Black_Friday/blog/raw/master/image/image-20210614210055825.png" alt="image-20210614210055825" style="zoom: 80%;" />
 
 ## 一些细节
 
 - 这三个模块都有相似的ResUnet结构（即没有共享参数的ResNet + U-Net）
 
-- 图3中的A 与P 分别是attention map与color map<img src="C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210614222810602.png" alt="image-20210614222810602" style="zoom:25%;" />
+- 图3中的A 与P 分别是attention map与color map<img src="https://gitee.com/Black_Friday/blog/raw/master/image/image-20210614222810602.png" alt="image-20210614222810602" style="zoom:25%;" />
 
 - 鉴别器：遵循Pix2Pix[9]的架构。
 
@@ -217,7 +217,7 @@ $$
 
 # 相关
 
-![image-20210615103108386](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210615103108386.png)
+![image-20210615103108386](https://gitee.com/Black_Friday/blog/raw/master/image/image-20210615103108386.png)
 
 图5是对不同任务的不同实现。
 
