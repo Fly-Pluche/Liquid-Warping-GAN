@@ -1,6 +1,10 @@
 
 
-# 改进
+# About
+
+This is a repository to deposit the code about my change in the origin code.
+
+# Idea
 
 - 加入注意力模块，玄学炼丹？？
 - 提高背景图像的复杂度：在得到仿射点的地方做文章（用u2net扣）
