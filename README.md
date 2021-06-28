@@ -13,3 +13,4 @@ Liquid-Warping-GAN is a GAN which integrates  Illustration of human motion imita
 The funny of it is the reason for me to choice it .
 
 ### 2021/6/28 create this repository,update the README.md and upload the translate of the paper.
+ 
