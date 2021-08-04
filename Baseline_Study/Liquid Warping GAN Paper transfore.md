@@ -126,7 +126,7 @@ $X_{S_1}^l$跟 $X_{S_2}^l$是特征图在第$l^{th}$层的通过$G_{TSF}$提取�
 $$
 \widehat{X^l_t}=BS (X^l_{S_1},T_1)+BS (X^l_{S_2},T_2)+X^l_t
 $$
-`PS`
+`PS：`
 
 我们只采用了两个source作为例子，实际上可以轻松扩展为多个source
 

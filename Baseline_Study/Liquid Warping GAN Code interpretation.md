@@ -10,7 +10,7 @@
 
 ![](https://gitee.com/Black_Friday/blog/raw/master/image/image-20210620212915727.png)
 
-# HumanModelRecovery
+## HumanModelRecovery
 
 > 路径：./networks/hmr.py    255行
 
@@ -27,7 +27,7 @@
 
 preACRResNet50$\longrightarrow{feature}\longrightarrow$ThetaRegressor
 
-## preACRResNet50
+#### preACRResNet50
 
 ```python
 def preActResNet50():
@@ -59,7 +59,7 @@ class PreActResNet():
 
 layer主要是由PreActBottleneck堆叠而成,而PreActBottleneck主要就是relu,bn,conv
 
-## ThetaRegressor
+#### ThetaRegressor
 
 ### 输出
 
@@ -95,7 +95,7 @@ return:
 
 
 
-# SMPLRender
+## SMPLRender
 
 
 
@@ -132,6 +132,98 @@ return:
 #### 生成器 判别器
 
 ![image-20210620212544523](https://gitee.com/Black_Friday/blog/raw/master/image/image-20210620212544523.png)
+
+## ImpersonatorGenerator
+
+### __ init __
+
+Encoder-Decoder架构：
+
+background generator
+
+source generator
+
+transfer generator
+
+### background generator（ResNetGenerator）
+
+先扩成64维，然后降采样-瓶颈模块-上采样
+
+降采样跟上采样都是由Conv+IN+ReLu堆叠，Conv中通道的缩放大多都是两倍的关系，且padding为1
+
+瓶颈模块是由维度不变的Conv+IN+ReLU+Conv+IN小模块重复堆叠来的。
+
+```python
+        layers.append(nn.Conv2d(curr_dim, 3, kernel_size=7, stride=1, padding=3, bias=False))
+        layers.append(nn.Tanh())
+```
+
+### source generator（ResUNetGenerator）
+
+我们先介绍一下forward
+
+feature map的输入顺序是：
+
+- self.encode
+- self.resnets
+- self.decode
+- self.regress(self.img_reg(),self.attention_reg())
+
+下面我们look and see 它们的组成部分
+
+#### encoder decode
+
+跟之前的差不多
+
+encoder, 0, 1, 2, 3 -> [256, 128, 64, 32]
+
+decoder, 0, 1, 2 -> [64, 128, 256]
+
+#### resnets
+
+32
+
+在Encoder之后，就是ResidualBlock
+
+#### regress
+
+返回两个输出，img_outs与mask_outs，分别由self.img_reg与self.attention_reg得到
+
+- self.img_reg
+
+```python
+layers.append(nn.Conv2d(curr_dim, 3, kernel_size=7, stride=1, padding=3, bias=False))
+layers.append(nn.Tanh())
+```
+
+- self.attention_reg
+
+```python
+layers.append(nn.Conv2d(curr_dim, 1, kernel_size=7, stride=1, padding=3, bias=False))
+layers.append(nn.Sigmoid())
+```
+
+也是先扩成64维，然后降采样-瓶颈模块-上采样
+
+降采样跟上采样都是由Conv+IN+ReLu堆叠，Conv中通道的缩放大多都是两倍的关系，padding为1
+
+瓶颈模块是由维度不变的Conv+IN+ReLU+Conv+IN小模块重复堆叠来的。
+
+
+
+### transfer generator（ResUNetGenerator）
+
+同上
+
+### forward（）
+
+背景图img_bg可以由self.bg_model()直接得到
+
+src_img, src_mask, tsf_img, tsf_mask = self.infer_front(src_inputs, tsf_inputs, T)
+
+## discriminator
+
+
 
 ## run_imitator.py 中的代码
 

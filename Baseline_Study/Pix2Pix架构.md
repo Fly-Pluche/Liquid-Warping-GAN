@@ -24,7 +24,7 @@ and so on
 
 而为了让输入的图片与输出的图片越接近越好，Pix2Pix该进了U-Net，即将Encoder与Decoder通过残差相连…..
 
-想想$U_2-net$也是一样骚操作。。。
+想想$U^2-net$也是一样骚操作。。。
 
 ![image-20210615182113052](https://gitee.com/Black_Friday/blog/raw/master/image/image-20210615182113052.png)
 
