@@ -82,3 +82,29 @@ N=27(3×3×3)是采样网格的尺寸。
 # 效果
 
 <img src="D:\workspace\D3Dnet-master\images\video.gif" alt="video" style="zoom:200%;" />
+
+
+
+
+
+![image-20210810143058395](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210810143058395.png)
+
+![image-20210810143201452](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210810143201452.png)
+
+![image-20210810143913339](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210810143913339.png)
+
+da={“a”:”1”}
+
+![image-20210810144303541](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210810144303541.png)
+
+上传的文件存在static
+
+![image-20210810145014463](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210810145014463.png)
+
+![image-20210810145306950](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210810145306950.png)
+
+![image-20210810145631487](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210810145631487.png)
+
+![image-20210810151421263](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210810151421263.png)
+
+![image-20210810222838699](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210810222838699.png)

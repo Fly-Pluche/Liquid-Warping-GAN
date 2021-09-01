@@ -170,3 +170,38 @@ src_inputs = torch.cat([img * ft_mask_img, src_info['cond']], dim=1)
 
 虽然我改进了$I_{bg}$​，但是相关的SMPL参数（eg:$C_s,T,C_t$​）并没有因此发生变化，导致I$_{syn}$变得奇怪，没有预想中的好。
 
+*V3:*
+
+# 3.2 `!!!!!!!!!!!!!!!!!!!!! important !!!!!!!!!!!!!!!!!!!!!!!`, human center crop and pad each image/frame into a `square image`.
+
+This step is very important, because the human body recovery model (HMR)  will achieve a better result of SMPL when the input is square image with human center cropped.
+You can manually give a rough square bounding boxes of each video or automatically run the person detector to get the person bounding boxes of each frame, and crop the original frames based on the bounding boxes with padding,  and then you will get the human center cropped square image. Saving the cropped images into `OUTPUT_DIR`.
+
+```shell
+# the diretory contains the estimated SMPL data for training, and the format is same as iPER dataset.
+OUTPUT_DIR:
+-----images:
+---------video_1:
+---------------: frame0000000.png
+---------------: frame0000001.png
+....
+```
+
+<kbd>D:\workspace\impersonator-master\models\imitator.py</kbd> 94行
+
+```python
+if src_smpl is None:
+    img_hmr = cv_utils.transform_img(ori_img, 224, transpose=True) * 2 - 1.0
+    img_hmr = torch.tensor(img_hmr, dtype=torch.float32).cuda()[None, ...]
+    src_smpl = self.hmr(img_hmr)   # src_smpl = [1,85]
+```
+
+|        | <img src="C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210813173820453.png" alt="image-20210813173820453" style="zoom: 25%;" /> |
+| ------ | ------------------------------------------------------------ |
+| before | <img src="C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210813173757270.png" alt="image-20210813173757270" style="zoom: 50%;" /> |
+| now    | <img src="C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20210813173745908.png" alt="image-20210813173745908" style="zoom: 50%;" /> |
+|        |                                                              |
+
+试试把背景去掉
+
+### 使用锐化算子
