@@ -12,15 +12,7 @@ I will read papers to get a deeper understanding about it,and try my best to imp
 
 Liquid-Warping-GAN is a GAN which integrates Illustration of human motion imitation, appearance transfer and novel view synthesis into one.
 
-The funny of it is the reason for me to choice it .
-
-# Update
-
-### 
-
-### 2021/6/28 create this repository update the README.md and upload the translate of the paper.
-
-# The birthday of this repository👶
+The funny of it is the reason for me to choice it .The birthday of this repository👶
 
 🍼2021/6/28 create this repository
 
@@ -29,6 +21,54 @@ The funny of it is the reason for me to choice it .
 - I update the Idea to Idear.
 
 They are all my note before 2021/6/28
+
+
+
+# Introduction
+
+Liquid Warp GAN 是一个基于GAN的无监督动作迁移，顾名思义就是动作的模仿。用机器学习让照片跳舞。一张图片，一个视频就能让你跟着影流之主摆动。
+		动作迁移过程可以分为三个阶段，第一阶段采用HMR的姿态检测模块，得到3D人体姿态关节关键点。第二个阶段通过3D人体姿态关键点得到相关的放射变换，得到模仿的人体姿态动作图。采用U2GE-net显著性检测网络，得到抠图后的背景图，通过图像修补网络得到虚拟的背景图。最后在第三个阶段，将人体姿态图虚拟背景图融合，得到最终的模仿效果。
+鬼畜，我是专业的！
+
+# End
+
+暑假考核已经结束了，过程曲折，验收也很曲折，邯郸学步的答辩差点把我整没了。。。
+
+
+
+The Video is save in the Video floder.
+
+由于作品的趣味性，最后也在科技交流会上进行演讲。第一次上这么大的场面还是挺高兴的。
+
+![1632802612018](https://gitee.com/Black_Friday/blog/raw/master/image/202112122009178.jpg)
+
+## Thanks for the XiaoWei change my ugly background of the front-end.
+
+![image-20211212200535302](https://gitee.com/Black_Friday/blog/raw/master/image/202112122005443.png)
+
+## Thanks for the Siri modified my poor PPT and added some nice animation
+
+![image-20211212201619343](https://gitee.com/Black_Friday/blog/raw/master/image/202112122016430.png)
+
+## Thanks for Maiweiliang and Sangzhiqi were shoot for my Speaking.
+
+![image-20211212201548901](https://gitee.com/Black_Friday/blog/raw/master/image/202112122015044.png)
+
+## Thanks for Luchang and Siri gave some modification suggestions to my manuscript.
+
+![image-20211212202605558](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20211212202605558.png)
+
+## Thanks for friends take pictures or videos of me.
+
+![image-20211212202432095](https://gitee.com/Black_Friday/blog/raw/master/image/202112122024577.png)
+
+## :kissing_heart:Thanks for everyone who intentional or unintentional help in my growth.Thank you for having you all the way
+
+
+
+2021年12月12日20:18:58
+
+
 
 # Noice
 
