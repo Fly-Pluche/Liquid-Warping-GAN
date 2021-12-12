@@ -40,15 +40,15 @@ The Video is save in the Video floder.
 
 由于作品的趣味性，最后也在科技交流会上进行演讲。第一次上这么大的场面还是挺高兴的。
 
-![1632802612018](https://gitee.com/Black_Friday/blog/raw/master/image/202112122009178.jpg)
+![1632802612018](image/1.jpg)
 
 ## Thanks for the XiaoWei change my ugly background of the front-end.
 
-![image-20211212200535302](https://gitee.com/Black_Friday/blog/raw/master/image/202112122005443.png)
+![image-20211212200535302](image/2.png)
 
 ## Thanks for the Siri modified my poor PPT and added some nice animation
 
-![image-20211212201619343](https://gitee.com/Black_Friday/blog/raw/master/image/202112122016430.png)
+![image-20211212201619343](image/4.png)
 
 ## Thanks for Maiweiliang and Sangzhiqi were shoot for my Speaking.
 
@@ -60,7 +60,7 @@ The Video is save in the Video floder.
 
 ## Thanks for friends take pictures or videos of me.
 
-![image-20211212202432095](https://gitee.com/Black_Friday/blog/raw/master/image/202112122024577.png)
+![image-20211212202432095](image/3.png)
 
 ## :kissing_heart:Thanks for everyone who intentional or unintentional help in my growth.Thank you for having you all the way
 
