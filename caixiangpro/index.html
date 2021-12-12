@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>首页</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+
+<body class="back_ground">
+
+
+    <form id="uploadForm" enctype="multipart/form-data" style="position:absolute;width:100%;">
+        <h1 style="    text-shadow: 2.5px 2.5px 7px white;">
+            <center>Liquid Warp GAN</center>
+        </h1>
+
+        <div id="td">
+            <div class="myflex">
+                <div class="select_file">
+                    <div>
+                        <img id="img"><br>
+                        <div class="myup">
+                            <button>Upload File</button>
+                            <input type="file" name="file">
+                        </div>
+                    </div>
+                </div>
+                <div class="img_tsf_position">
+                    <img id="img_tsf"><br>
+                    <div class="myup">
+                        <button>Upload File</button>
+                        <input type="file" name="file_tsf">
+                    </div>
+                </div>
+            </div>
+
+            <div class="result">
+                <div>
+                    <img id="img_result">
+                    <p id="p1">
+                        Imitation results
+                    </p>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="select_button">
+            <input type="button" value="Determine" id="upFileBtn" font color="black">
+            <div class="check">
+
+
+                <div class="myselect">
+                    <input type="checkbox" name="动作迁移" value="1">Movement transfer
+                </div>
+                <div class="myselect">
+                    <input type="checkbox" name="外貌生成" value="2" /> Appearance generation
+                </div>
+                <div class="myselect">
+                    <input type="checkbox" name="分割迁移" value="3" /> Partition migration
+                </div>
+
+                <div id="app">
+                    <input id="orderUser" name="更改背景" type="checkbox" value="4" @click="test"> Change background
+                    <form id="order">
+                        <div class="myup">
+                            <button style="position: absolute; width: 100px;    top: 10px;
+                            right: -90px;" v-show="isShow">Upload File</button>
+                            <input type="file" name="back_ground" v-show="isShow" style="    transform: inherit;    top: 10px; width: 100px;right: -90px;" />
+                        </div>
+                        <img id='back_groundimg' v-show="isShow">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- <select multiple="multiple" size="1">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select> -->
+
+        </div>
+
+    </form>
+    <!-- 播放MP4 -->
+    <!-- <video width="450" height="350" controls="controls" type="video/mp4" preload="auto">
+    <source src="D:/photo_video/qq/0.mp4" autostart="false">
+    Your browser does not support the video tag.
+    </video> -->
+    <div class="container">
+        <div id="particles-js"></div>
+    </div>
+
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+</body>
+<script src="https://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    // 绑定上传按钮
+    $('#upFileBtn').click(function() {
+        var formFile = new FormData($('#uploadForm')[0])
+        $.ajax({
+            url: "/detector", // 选择给定路由
+            type: "POST", // 选择上传方式
+            data: formFile, // 使用form表单的形式上传
+            processData: false,
+            contentType: false,
+            success: function(data) {
+                var d = JSON.parse(data) // 解析JSON数据
+                $('#img').attr('src', d.file_url); // 更新显示的图片
+                // $('#d1').html(d.detect_result); // 更新识别的结果
+                $('#img_result').attr('src', d.result_url);
+                $('#back_groundimg').attr('src', d.bg_url);
+                $('#img_tsf').attr('src', d.tsf_url);
+            }
+        })
+    })
+</script>
+
+<!-- 出现按钮 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            isShow: false
+        },
+        methods: {
+            test() {
+                this.isShow = !this.isShow;
+            }
+        },
+    })
+</script>
+
+
+</html>
