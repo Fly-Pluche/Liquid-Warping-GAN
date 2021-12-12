@@ -48,15 +48,11 @@ The Video is save in the Video floder.
 
 ## Thanks for the Siri modified my poor PPT and added some nice animation
 
-![image-20211212201619343](image/4.png)
-
 ## Thanks for Maiweiliang and Sangzhiqi were shoot for my Speaking.
 
-![image-20211212201548901](https://gitee.com/Black_Friday/blog/raw/master/image/202112122015044.png)
+![image-20211212201619343](image/4.png)
 
 ## Thanks for Luchang and Siri gave some modification suggestions to my manuscript.
-
-![image-20211212202605558](C:\Users\BlackFriday\AppData\Roaming\Typora\typora-user-images\image-20211212202605558.png)
 
 ## Thanks for friends take pictures or videos of me.
 
