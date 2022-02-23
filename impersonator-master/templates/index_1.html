@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>首页</title>
+    <style>
+        #img {
+            width: 256px;
+            height: 256px;
+            color: aquamarine;
+            background-color: rgba(240, 255, 255, 0.452);
+            backdrop-filter: blur(5px);
+            /* background:url("D:/photo_video/qq/0.gif"); */
+            border-radius:10px;
+        }
+        #back_groundimg {
+            width: 50px;
+            height: 50px;
+            color: aquamarine;
+            background-color: rgba(240, 255, 255, 0.452);
+            backdrop-filter: blur(5px);
+        }
+        #img_result {
+            width: 256px;
+            height: 256px;
+            color: aquamarine;
+            background-color: rgba(240, 255, 255, 0.452);
+            backdrop-filter: blur(5px);
+            border-radius:10px;
+        }
+
+        #box {
+            text-align: center;
+        }
+        .back_ground{
+            /* background-image: url("D:/photo_video/qq/0.gif"); */
+            background-image: url("/static/assets/1.jpg");
+            background-size: cover;
+
+        }
+        .select_file{
+            float: left;
+            position: relative;
+            left: 10%;
+        }
+        .img_tsf_position {
+            float:left;
+            position: relative;
+            left:20%
+
+
+
+            /* position: relative; */
+            /* left: 20%; */
+        }
+        #img_tsf {
+            width: 256px;
+            height: 256px;
+            color: aquamarine;
+            background-color: rgba(240, 255, 255, 0.452);
+            backdrop-filter: blur(5px);
+            /* background:url("D:/photo_video/qq/0.gif"); */
+            border-radius:10px;
+
+        }
+        .result{
+            height:256px;
+            width:256px;
+            float:right;
+            position: relative;
+            right: 10%;
+            border-radius:10px;
+            /* padding:5px; */
+                }
+        .select_button{
+            position: absolute;
+            left: 50%;
+            bottom: 20%;
+        }
+
+        #td{
+
+            height: 400px;
+            width: 1300px;
+            position:relative;
+            margin:0 auto;
+            margin-top:50px;
+
+        }
+
+    </style>
+
+
+</head>
+<body class="back_ground">
+
+
+<form id="uploadForm" enctype="multipart/form-data" >
+    <h1><center>Liquid Warp GAN</center></h1>
+
+<div id="td">
+    <div class="select_file">
+
+        <div>
+            <img id="img"><br>
+            <input type="file" name="file">
+        </div>
+</div>
+<div class="img_tsf_position">
+    <img id="img_tsf" ><br>
+    <input type="file" name="file_tsf">
+</div>
+
+
+<div class="result">
+        <img id="img_result" >
+        <p id="p1"><center>模仿结果</center></p>
+</div>
+</div>
+
+<div class="select_button">
+        <input type="button" value="确定" id="upFileBtn" font color="black">
+        <input type="checkbox" name="动作迁移" value="1"/> 动作迁移
+        <input type="checkbox" name="外貌生成" value="2"/> 外貌生成
+        <input type="checkbox" name="分割迁移" value="3"/> 分割迁移
+        <!-- <select multiple="multiple" size="1">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select> -->
+
+        <div id="app">
+        <input id="orderUser" name="更改背景" type="checkbox" value="4" @click="test">更改背景
+        <form id="order">
+            <input type="file" name="back_ground" v-show="isShow"/><br>
+            <img id='back_groundimg' v-show="isShow">
+        </form>
+
+
+        </div>
+
+</div>
+
+</form>
+<!-- 播放MP4 -->
+<!-- <video width="450" height="350" controls="controls" type="video/mp4" preload="auto">
+    <source src="D:/photo_video/qq/0.mp4" autostart="false">
+    Your browser does not support the video tag.
+    </video> -->
+
+</body>
+
+
+<script src="https://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    // 绑定上传按钮
+    $('#upFileBtn').click(function () {
+        var formFile = new FormData($('#uploadForm')[0])
+        $.ajax({
+            url: "/detector", // 选择给定路由
+            type: "POST",   // 选择上传方式
+            data: formFile, // 使用form表单的形式上传
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                var d = JSON.parse(data) // 解析JSON数据
+                $('#img').attr('src', d.file_url); // 更新显示的图片
+                // $('#d1').html(d.detect_result); // 更新识别的结果
+                $('#img_result').attr('src',d.result_url);
+                $('#back_groundimg').attr('src',d.bg_url);
+                $('#img_tsf').attr('src',d.tsf_url);
+            }
+        })
+    })
+</script>
+
+<!-- 出现按钮 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            isShow: false
+        },
+        methods: {
+            test() {
+                this.isShow = !this.isShow;
+            }
+        },
+    })
+</script>
+
+
+</html>
