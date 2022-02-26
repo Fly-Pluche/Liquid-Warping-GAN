@@ -67,6 +67,7 @@ The Video is save in the Video floder.
 
 
 # Noice
+如果你也想试试魔法，可以关注https://github.com/iPERDance/iPERCore这，是Liquid-Warping-GAN的改进版，效果更好，泛化性更强（2021年）。
 
 If you have a situation where latex can't render [![image](https://user-images.githubusercontent.com/73021377/123636279-3ea5c780-d84f-11eb-8bf4-5bdcdef56ff8.png)](https://user-images.githubusercontent.com/73021377/123636279-3ea5c780-d84f-11eb-8bf4-5bdcdef56ff8.png)
 
